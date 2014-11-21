@@ -19,7 +19,6 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/rails_rss_reader.sqlite3
+  adapter: postgresql
   pool: 5
   timeout: 5000
