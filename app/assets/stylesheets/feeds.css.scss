@@ -1,0 +1,18 @@
+// Place all the styles related to the feeds controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+span#form_invalid {
+	display: none;
+	background-color: #B20000;
+	padding: 5px;
+	text-shadow: none;
+	color: #FFF;
+}
+
+.ui-content .field_with_errors input {
+	border: 1px solid #B20000;
+}
+.ui-li-icon {
+	top: 9px;
+	z-index: 100;
+}

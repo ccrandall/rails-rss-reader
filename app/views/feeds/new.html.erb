@@ -1,0 +1,16 @@
+<h2 class="User_Header">Add Feeds </h2>
+<div data-role="content" role="main">
+		<p><span id="form_invalid">Please fill out the necessary fields</span></p>
+		<%= form_for :feed, url: feeds_path do |f| %>
+		  <%= f.text_field :feed_name, {placeholder: "Feed Name"} %>
+		  <%= f.text_field :feed_url, {placeholder: "Feed URL"} %>
+		  <%= f.hidden_field :user_id, :value => @current_user.id %>
+		  <%= button_to "Submit", @add_feed, remote: true %>
+		<% end %>
+		<!--<form method="post" action="add_feed.php" id="add_feed">
+			<input type="text" name="feed_name" id="feed_name" placeholder="Feed Name">
+			<input type="text" name="feed_url" id="feed_url" placeholder="Feed URL">
+			<input type="hidden" name="add_feed" value="1">
+			<button class="ui-btn-mini ui-btn" id="submit">Submit</button>
+		</form>-->
+</div>

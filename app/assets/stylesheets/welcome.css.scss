@@ -1,0 +1,46 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* jquery mobile overrides */
+body.ui-mobile-viewport {
+	font-family: 'Source Sans Pro', sans-serif
+}
+.ui-page-theme-a .ui-btn {
+	background: inherit;
+	text-shadow: none;
+}
+
+header a.navbar-brand.ui-link {
+	color: #999;
+	text-shadow: none;
+}
+
+button.navbar-toggle.ui-btn {
+	display: none;
+	background: inherit;
+	text-shadow: none;
+}
+
+header.navbar-inverse .navbar-nav > li > a {
+	text-shadow: none;
+}
+
+footer {
+	margin-top: 30px;
+}
+
+.ui-li-icon {
+	z-index: 100;
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-inverse .navbar-collapse {
+		clear: both;
+	}
+	button.navbar-toggle.ui-btn {
+		display: block;
+		width: auto;
+	}
+}
+/* end jquery mobile overrides */

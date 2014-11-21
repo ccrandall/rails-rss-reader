@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RubySource User Auth</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
+  <%= stylesheet_link_tag "http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" %>
+  
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="apple-touch-icon" href="/assets/rss-icon.png" />
+</head>
+<body>
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+	    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+	           <span class="sr-only">Toggle navigation</span>
+	           <span class="icon-bar"></span>
+	           <span class="icon-bar"></span>
+	           <span class="icon-bar"></span>
+	         </button>
+			 <a href="/" class="navbar-brand">RSS READER</a>
+		<nav class="collapse navbar-collapse bs-navbar-collapse">
+	<%unless session[:user_id]%>
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to :Signup , :signup, class: "nav_links"%></li><li><%= link_to :Login , :login, class: "nav_links"%></li>	
+			</ul>
+	<%else%>
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to :Home , :home, class: "nav_links" %></li>
+				<li><%= link_to :Profile , :profile, class: "nav_links" %></li>
+				<li><%= link_to :Feeds , :feeds, class: "nav_links" %></li>
+				<!--<li><%#= link_to :Settings , :setting, class: "nav_links" %></li>-->
+				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
+			</ul>
+	<%end%>
+		</nav>
+	</div>
+</header>
+<main class="masthead" id="content">
+	<div class="container">
+		<div class="center hero-unit">
+		<h1>RSS READER</h1>
+		<% if flash[:color]== "valid" %>
+			<div class="valid_notice">
+				<p class="bg-success"><%= flash[:notice]%></p>
+			</div>
+		<% elsif flash[:color]== "invalid"%>
+			<div class="invalid_notice">
+				<p class="bg-danger"><%=flash[:notice]%></p>
+			</div>
+		<%else%>
+			<div class="notice">
+				<p class="bg-info"><%=flash[:notice]%></p>
+			</div>
+		<%end%>
+		</div>
+	<%= yield %>
+	</div>
+</main>
+<footer data-role="footer">
+        <h4>&copy;  2014 <a href="http://www.calcotechnology.com">CALCO Technology</a></h4>
+    </footer>
+</body>
+</html>

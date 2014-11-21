@@ -1,0 +1,14 @@
+<h2 class='User_Header'><%=@feed_name %> Feed</h2>
+<% 
+require 'rss'
+rss = RSS::Parser.parse("#{@feed_url}", false)
+limit = 10
+i = 1;
+%>
+	<% rss.items.each do |item| %>
+	<div data-role="collapsible" data-iconpos="right"> 
+		<h4><%= item.title %></h4>
+		<p><%= sanitize(item.description) %></p>
+		<%= link_to("View article on #{@feed_name}", item.link, :class => 'ui-btn ui-btn-icon-right ui-icon-carat-r') %>	
+	</div>
+	<% end %>

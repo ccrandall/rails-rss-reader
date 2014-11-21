@@ -1,0 +1,5 @@
+<%= form_for :feed do |f| %>
+  <%= f.text_field :feed_name, {value: "#{@feed_name}"} %>
+  <%= f.text_field :feed_url, {value: "#{@feed_url}"} %>
+  <%= button_to "Submit", @save_edit, remote: true %>
+<% end %>
