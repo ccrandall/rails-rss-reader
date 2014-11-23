@@ -2,7 +2,7 @@
 <% #@feed_url = feed.feed_url %>
 <% # @feed_name = feed.feed_name.downcase.sub(' ', '-') %>
 <li class="ui-li-has-icon">
-	<img src="/assets/rss-icon.png" alt="<%= feed.feed_name%>" class="ui-li-icon">
+	<%= image_tag("rss-icon.png", alt: "#{feed.feed_name}", class: "ui-li-icon") %>
 	<a id="<%= @feed_name %>-link" href="/feed/<%= feed.id %>/edit" data-feed-url="<%= feed.feed_url%>" data-transition="slide" class="ui-btn ui-btn-icon-right ui-icon-carat-d"><%= feed.feed_name %></a>
 </li>
 <% end %>
