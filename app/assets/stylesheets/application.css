@@ -8,9 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require style
  *= require_self
- *= require bootstrap
- *= require_tree .
  */
 
 body, input, select, textarea, button, .ui-btn {
@@ -21,4 +20,28 @@ body, input, select, textarea, button, .ui-btn {
 
 .masthead {
     padding: 60px 0 0 0;
+}
+
+.ui-mobile .ui-page-theme-a a:visited, 
+html.ui-mobile .ui-bar-a a:visited, 
+html.ui-mobile .ui-body-a a:visited, 
+html.ui-mobile body .ui-group-theme-a a:visited {
+    color: #9d9d9d;
+}
+
+.ui-mobile .ui-overlay-a, .ui-mobile .ui-page-theme-a, .ui-mobile .ui-page-theme-a .ui-panel-wrapper {
+	text-shadow: none;
+}
+
+.ui-mobile .ui-listview>.ui-li-has-icon>img:first-child, .ui-mobile .ui-listview>.ui-li-has-icon>.ui-btn>img:first-child {
+  top: 0.6em;
+  max-height: 1.5em;
+  max-width: 1.5em;
+  z-index: 1;
+}
+
+@media(max-width: 767) {
+	.ui-mobile nav.navbar-collapse {
+		clear: both;
+	}
 }

@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_filter :authenticate_user
+  before_action :authenticate_user
   
   def index
     @feeds = Feedlist.where("user_id=?", @current_user.id)

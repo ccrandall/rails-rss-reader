@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :save_login_state, :only => [:new, :create]
+  before_action :save_login_state, :only => [:new, :create]
   #has_many :feeds
 
   def show
